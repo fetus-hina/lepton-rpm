@@ -1,0 +1,20 @@
+FROM centos:7
+ENV HOME /
+RUN yum update -y && \
+    yum install -y \
+        autoconf \
+        automake \
+        gcc-c++ \
+        make \
+        redhat-rpm-config \
+        rpm-build \
+        rpmdevtools \
+        tar && \
+    yum clean all && \
+    rpmdev-setuptree
+RUN echo '%dist .el7.jp3cki' >> /.rpmmacros
+ADD ./rpmbuild/ /rpmbuild/
+RUN chown -R root:root /rpmbuild
+RUN rpmbuild -ba /rpmbuild/SPECS/lepton.spec
+RUN tar -czf /tmp/lepton.tar.gz -C /rpmbuild RPMS SRPMS
+CMD ["/bin/true"]
