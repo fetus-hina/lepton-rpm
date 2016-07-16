@@ -1,13 +1,11 @@
 SOURCE_ARCHIVE := 1.0.tar.gz
 TARGZ_FILE := lepton.tar.gz
 IMAGE_NAME := lepton-package
-centos6: IMAGE_NAME := $(IMAGE_NAME)-ce6
 centos7: IMAGE_NAME := $(IMAGE_NAME)-ce7
 
-.PHONY: all clean centos6 centos7
+.PHONY: all clean centos7
 
-all: centos6 centos7
-centos6: centos6.build
+all: centos7
 centos7: centos7.build
 
 rpmbuild/SOURCES/$(SOURCE_ARCHIVE):
