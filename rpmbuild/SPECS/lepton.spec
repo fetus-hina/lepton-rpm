@@ -1,17 +1,19 @@
 Summary: Lepton
 Name: lepton
 Version: 1.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 URL: https://github.com/dropbox/lepton
 Source0: https://github.com/dropbox/lepton/archive/%{version}.tar.gz
 License: ASL 2.0
 Group: Applications/Archiving
+Requires: kernel >= 3.5
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires: autoconf automake bash gcc-c++ make
 
 %description
-Lepton is a tool and file format for losslessly compressing JPEGs by an average of 22%.
-This can be used to archive large photo collections, or to serve images live and save 22% bandwidth.
+Lepton is a tool and file format for losslessly compressing JPEGs by an
+average of 22%. This can be used to archive large photo collections, or
+to serve images live and save 22% bandwidth.
 
 %prep
 %setup -q
@@ -38,5 +40,8 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS README.md license.txt 
 
 %changelog
+* Sat Jul 16 2016 AIZAWA Hina <hina@bouhime.com> - 1.0-2
+- Add dependency: kernel >= 3.5 (seccomp)
+
 * Fri Jul 15 2016 AIZAWA Hina <hina@bouhime.com> - 1.0-1
 - v1.0
