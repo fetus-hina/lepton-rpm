@@ -1,4 +1,4 @@
-SOURCE_ARCHIVE := 1.0.tar.gz
+SOURCE_ARCHIVE := 1.2.1.tar.gz
 TARGZ_FILE := lepton.tar.gz
 IMAGE_NAME := lepton-package
 centos7: IMAGE_NAME := $(IMAGE_NAME)-ce7

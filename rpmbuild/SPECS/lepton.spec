@@ -1,7 +1,7 @@
 Summary: Lepton
 Name: lepton
-Version: 1.0
-Release: 2%{?dist}
+Version: 1.2.1
+Release: 1%{?dist}
 URL: https://github.com/dropbox/lepton
 Source0: https://github.com/dropbox/lepton/archive/%{version}.tar.gz
 License: ASL 2.0
@@ -40,6 +40,9 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS README.md license.txt 
 
 %changelog
+* Thu Jul 21 2016 AIZAWA Hina <hina@bouhime.com> - 1.2.1-1
+- Update to 1.2.1
+
 * Sat Jul 16 2016 AIZAWA Hina <hina@bouhime.com> - 1.0-2
 - Add dependency: kernel >= 3.5 (seccomp)
 
